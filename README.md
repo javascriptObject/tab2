@@ -1,2 +1,254 @@
 # jQuery选项卡
+* 效果如下
+![](images/img.gif)
+
+* 全部代码
+```
+<!--文档声明为 html（最新html5）-->
+<!doctype html>
+<html>
+<head>
+	<!--声明当前页面编码格式为国际编码（utf-8）还有一种中文编码（gbk/gb2312）-->
+	<meta charset="UTF-8">
+	<!--网页三要素-->
+	<meta name="Keywords" content="关键词,关键词">
+	<meta name="Description" content="描述">
+	<title>网页的标题</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		ul,li{
+			list-style:none;
+		}
+		.box{
+			width:880px;
+			height:500px;
+			border:1px solid #999;/*边框 宽度 风格 颜色*/
+			margin:50px auto 0;/*上 左右  下  上 右  下 左 auto 自动*/
+		}
+		.box .but{
+			width:178px;
+			height:500px;
+			border-right:1px solid #999;
+			float:left;
+		}
+		.box .but ul li{
+			height:45px;
+			font-size:14px;
+			text-align:center;/*对齐方式 left center  right*/
+			border-bottom:1px solid #999;
+			line-height:45px;
+			position:relative;
+			cursor:pointer;
+		}
+		.box .but ul li img.icon{
+			position:absolute;
+			right:-14px;
+			top:14px;
+			display:none;
+		}
+		.box .but ul li.active{
+			background:#efefef;
+			color:#f69;
+		}
+		.box .but ul li.active img{
+			display:block;
+		}
+		.box .con{
+			width:700px;
+			height:500px;
+			float:right;
+		}
+		.box .con ul li{
+			width:180px;
+			height:230px;
+			float:left;
+			margin:10px 15px;
+			padding:0 10px;
+		}
+		.box .con ul li p{
+			font-size:14px;
+			color:#666;
+			line-height:30px;
+		}
+		.box .con ul li p span{
+			color:#f69;
+			float:right;
+		}
+		.box .con .list{
+			display:none;
+		}
+	</style>
+</head>
+<body>
+<!--
+    1.id(唯一 身份证号码  #)  class(姓名 重复  .)
+    -->
+<div class="box">
+	<div class="but">
+		<ul>
+			<li class="active">送女朋友<img src="images/ico.png" alt="" class="icon" /></li>
+			<li>送男朋友<img src="images/ico.png" alt="" class="icon" /></li>
+			<li>送父亲<img src="images/ico.png" alt="" class="icon" /></li>
+			<li>送员工<img src="images/ico.png" alt="" class="icon" /></li>
+			<li>送同事<img src="images/ico.png" alt="" class="icon" /></li>
+		</ul>
+	</div>
+	<div class="con">
+		<div class="list" style="display:block;">
+			<ul>
+				<li>
+					<img src="images/1-1.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/1-2.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/1-3.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/1-4.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/1-5.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/1-6.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+			</ul>
+		</div>
+		<div class="list">
+			<ul>
+				<li>
+					<img src="images/2-1.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/2-2.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/2-3.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/2-4.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/2-5.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/2-6.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+			</ul>
+		</div>
+		<div class="list">
+			<ul>
+				<li>
+					<img src="images/3-1.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/3-2.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/3-3.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/3-4.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/3-5.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/3-6.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+			</ul>
+		</div>
+		<div class="list">
+			<ul>
+				<li>
+					<img src="images/4-1.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/4-2.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/4-3.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/4-4.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/4-5.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/4-6.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+			</ul>
+		</div>
+		<div class="list">
+			<ul>
+				<li>
+					<img src="images/5-1.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/5-2.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/5-3.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/5-4.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/5-5.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+				<li>
+					<img src="images/5-6.jpg" alt="" width="180" height="180" />
+					<p>瞌睡兔音乐枕 <span>￥30.0</span></p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+<script src="js/jquery.js"></script>
+<script>
+	$(".box .but ul li").mouseover(function(){
+		var _index = $(this).index();
+		$(this).addClass("active").siblings().removeClass("active");
+		$(".box .con .list").eq(_index).show().siblings().hide();
+	});
+</script>
+
+```
 
